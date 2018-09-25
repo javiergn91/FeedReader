@@ -1,0 +1,9 @@
+.article-link:hover {
+    background-color: #fafafa;
+}
+
+.article-link {
+    background-color:#fff;
+    border:1px #ccc;
+}
+

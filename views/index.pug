@@ -1,6 +1,9 @@
 extends layout
 
 block content
-    ul
+    ul.list-group
         each val in articles
-            li= val
+            li.list-group-item.article-link
+                =val.title
+                =" - " + val.author
+                =" " + val.creation_date
