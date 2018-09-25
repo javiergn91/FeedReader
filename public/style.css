@@ -7,3 +7,38 @@
     border:1px #ccc;
 }
 
+.title, .time {
+    color:#333;
+    font-size: 13pt;
+}
+
+.title, .author {
+    float: left;
+}
+
+.time {
+    float: right;
+}
+
+.author {
+    color: #999;
+}
+
+.news-page {
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.news-header {
+    background-color: #333;
+    padding: 15px;
+}
+
+.news-header-title, .news-header-subtitle {
+    color: white;
+    font-weight: bold;
+}
+
+.news-header-title {
+    font-size: 40pt;
+}

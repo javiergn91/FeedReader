@@ -1,9 +1,18 @@
 extends layout
 
 block content
-    ul.list-group
-        each val in articles
-            li.list-group-item.article-link
-                =val.title
-                =" - " + val.author
-                =" " + val.creation_date
+    div.news-page
+        div.news-header
+            div.news-header-title
+                ="HN Feed"
+            div.news-header-subtitle
+                ="We <3 hacker news!"
+        ul.list-group
+            each val in articles
+                li.list-group-item.article-link
+                    div.title
+                        =val.title
+                    div.author
+                        =val.author
+                    div.time
+                        =val.creation_date
