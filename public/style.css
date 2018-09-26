@@ -19,6 +19,8 @@
 
 .time {
     float: right;
+    padding: 5px;
+    margin-right: 60px;
 }
 
 .author {
@@ -48,4 +50,5 @@
 
 .actions {
     float: right;
+    padding-top: 5px;
 }

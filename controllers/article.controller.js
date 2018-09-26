@@ -16,7 +16,7 @@ articleController.createArticle = (data) => {
 };
 
 articleController.getArticles = (func) => {
-    Article.find({ hidden: false }).then(data => {
+    Article.find({ hidden: false }).sort({creation_date: "desc"}).then(data => {
         func(data);
     });
 };
