@@ -18,16 +18,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const { mongoose } = require("./database");
 
-//DatabasePopulate.populate();
-
-/*
 //Fetching data from API
-cron.schedule("* * * * *", () => {
-    https.get("https://hn.algolia.com/api/v1/search_by_date?query=nodejs", (result) => {
-        console.log(result);
-    });
+cron.schedule("0 * * * *", () => {
+    DatabasePopulate.populate();
 });
-*/
 
 app.get("/", (req, res) => {
     ArticleController.getArticles((data) => {
