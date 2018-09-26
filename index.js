@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const { mongoose } = require("./database");
 
-//databasePopulate.populate();
+databasePopulate.populate();
 
 /*
 //Fetching data from API
@@ -25,12 +25,17 @@ cron.schedule("* * * * *", () => {
 });
 */
 
-
 app.get("/", (req, res) => {
     ArticleController.getArticles((data) => {
         res.render("index", {
             articles: data
         });
+    });
+});
+
+app.get("/deleteArticle/:id", (req, res) => {
+    ArticleController.deleteArticle(req.params.id, () => {
+        res.render("deleteArticle");
     });
 });
 

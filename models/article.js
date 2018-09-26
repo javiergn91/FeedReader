@@ -6,7 +6,8 @@ const articleSchema = new Schema({
     author: { type: String, required: true },
     creation_date: { type: Date, required: true },
     object_id: { type: Number, required: true, unique: true },
-    url: { type: String, required: true }
+    url: { type: String, required: true },
+    hidden: { type: Boolean, default: false}
 });
 
 module.exports = mongoose.model("Article", articleSchema);

@@ -16,8 +16,17 @@ articleController.createArticle = (data) => {
 };
 
 articleController.getArticles = (func) => {
-    Article.find().then(data => {
+    Article.find({ hidden: false }).then(data => {
         func(data);
+    });
+};
+
+articleController.deleteArticle = (articleId, func) => {
+    Article.findById(articleId, (err, article) => {
+        article.hidden = true;
+        article.save(() => {
+            func();
+        });
     });
 };
 

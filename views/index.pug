@@ -9,10 +9,15 @@ block content
                 ="We <3 hacker news!"
         ul.list-group
             each val in articles
-                li.list-group-item.article-link
-                    div.title
-                        =val.title
-                    div.author
-                        =val.author
-                    div.time
-                        =val.creation_date
+                a(href=val.url, target="_blank")
+                    li.list-group-item.article-link
+                        div.title
+                            =val.title
+                        div.author
+                            =" - " + val.author + " - "
+                        div.actions
+                            a(href="/deleteArticle/" + val.id)
+                                i.fa.fa-trash
+                        div.time
+                            =val.creation_date
+
